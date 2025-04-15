@@ -1,0 +1,95 @@
+{
+  "deliveries": [
+    {
+      "id": "1",
+      "recipient": "John Doe-updated",
+      "address": "House 12, Road 5, Dhanmondi, Dhaka",
+      "status": "Not Delivered",
+      "date": "2027-10-24"
+    },
+    {
+      "id": "2",
+      "recipient": "Fatima Akter-updatd",
+      "address": "House 22, Block B, Bashundhara R/A, Dhaka",
+      "status": "In Transit",
+      "date": "2026-10-24"
+    },
+    {
+      "id": "3",
+      "date": "2023-10-23",
+      "recipient": "Shakil Rahman",
+      "address": "Road 8, Sector 10, Uttara, Dhaka",
+      "status": "Pending"
+    },
+    {
+      "id": "4",
+      "date": "2023-10-22",
+      "recipient": "Tahmina Sultana",
+      "address": "Flat 3B, House 7, Banani, Dhaka",
+      "status": "Delivered"
+    },
+    {
+      "id": "5",
+      "date": "2023-10-21",
+      "recipient": "Nasir Hossain",
+      "address": "Plot 14, Mirpur DOHS, Dhaka",
+      "status": "Pending"
+    },
+    {
+      "id": "6",
+      "date": "2023-10-20",
+      "recipient": "Ayesha Siddiqua",
+      "address": "House 45, Block C, Mohammadpur, Dhaka",
+      "status": "In Transit"
+    },
+    {
+      "id": "7",
+      "date": "2023-10-19",
+      "recipient": "Tanvir Alam",
+      "address": "Road 2, Gulshan 2, Dhaka",
+      "status": "Not Delivered"
+    },
+    {
+      "id": "8",
+      "date": "2023-10-18",
+      "recipient": "Mehnaz Chowdhury",
+      "address": "Flat 5A, House 9, Baridhara, Dhaka",
+      "status": "Pending"
+    },
+    {
+      "id": "9",
+      "date": "2023-10-17",
+      "recipient": "Rezaul Karim",
+      "address": "Holding 99, Lalmatia, Dhaka",
+      "status": "Not Delivered"
+    },
+    {
+      "id": "10",
+      "date": "2023-10-16",
+      "recipient": "Sabina Yasmin",
+      "address": "House 33, Block E, Rampura, Dhaka",
+      "status": "In Transit"
+    },
+    {
+      "date": "2025-04-25",
+      "recipient": "Md Ashik 2-updated",
+      "address": "House 12, Road 5, Rampura-updated, Dhaka",
+      "status": "Delivery done",
+      "id": "24f4"
+    },
+    {
+      "id": "4321",
+      "recipient": "ashik2",
+      "address": "244 Vawalipara,GM Bari,Uttor Badda",
+      "status": "Pending",
+      "date": "2025-05-01"
+    },
+    {
+      "id": "80ad",
+      "recipient": "awdad",
+      "address": "House 22, Block B, Bashundhara R/A, Dhaka",
+      "status": "Pending",
+      "date": "2025-04-15"
+    }
+  ]
+}
