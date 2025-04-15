@@ -12,7 +12,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createDelivery, updateDelivery } from "../../features/deliveries/deliveriesSlice";
+import {
+  createDelivery,
+  updateDelivery,
+} from "../../features/deliveries/deliveriesSlice";
 
 interface DeliveryFormType {
   handleClose: () => void;
@@ -93,13 +96,11 @@ const DeliveryForm = ({ handleClose, initialData }: DeliveryFormType) => {
     };
 
     if (initialData?.id) {
-      console.log("✏️ Updating delivery:", formattedData);
       dispatch(updateDelivery({ id: initialData.id, ...formattedData }));
       handleClose();
     } else {
       dispatch(createDelivery(formattedData));
       handleClose();
-      console.log("➕ Adding delivery:", formattedData);
     }
   };
 

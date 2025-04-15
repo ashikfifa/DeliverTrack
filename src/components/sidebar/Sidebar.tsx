@@ -1,4 +1,5 @@
 import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
+import './sidebar.css'
 
 interface SidebarProps {
   selectedView: "dashboard" | "deliveries";
@@ -18,7 +19,7 @@ const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
         Logo
       </Typography>
 
-      <List style={{ cursor: "pointer", padding: "15px" }}>
+      <List className="sidebarItem" >
         <ListItem
           component="div"
           onClick={() => onSelect("dashboard")}

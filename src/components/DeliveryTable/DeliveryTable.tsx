@@ -111,8 +111,6 @@ export default function CustomPaginationTable({ query }: Props) {
   const dispatch = useDispatch<AppDispatch>();
   const { rows, status } = useSelector((state: RootState) => state.deliveries);
 
-  console.log("555555555555555555", rows);
-
   const handleEditClick = (delivery: any) => {
     setSelectedDelivery(delivery);
     setOpenModal(true);

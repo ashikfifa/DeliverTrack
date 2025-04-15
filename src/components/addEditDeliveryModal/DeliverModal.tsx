@@ -13,10 +13,12 @@ interface DeliverModalType {
   };
 }
 
-
-const DeliverModal = ({ openModal,selectedDelivery,handleClose }: DeliverModalType) => {
-
-return (
+const DeliverModal = ({
+  openModal,
+  selectedDelivery,
+  handleClose,
+}: DeliverModalType) => {
+  return (
     <Modal
       open={openModal}
       onClose={handleClose}
@@ -36,10 +38,10 @@ return (
           p: 4,
         }}
       >
-       <DeliveryForm handleClose={handleClose} initialData={selectedDelivery} />
-
-
-  
+        <DeliveryForm
+          handleClose={handleClose}
+          initialData={selectedDelivery}
+        />
       </Box>
     </Modal>
   );
