@@ -9,7 +9,8 @@ interface SidebarProps {
 const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
   return (
     <Box
-      width="220px"
+      width="100%"
+      maxWidth="300px"
       bgcolor="#2C80FF"
       color="white"
       display="flex"
