@@ -16,6 +16,7 @@ import {
   createDelivery,
   updateDelivery,
 } from "../../features/deliveries/deliveriesSlice";
+import { AppDispatch } from "../../store";
 
 interface DeliveryFormType {
   handleClose: () => void;
@@ -29,7 +30,7 @@ interface DeliveryFormType {
 }
 
 const DeliveryForm = ({ handleClose, initialData }: DeliveryFormType) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const [formValue, setFormValue] = useState({
     recipient: initialData?.recipient || "",
     address: initialData?.address || "",

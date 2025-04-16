@@ -137,12 +137,10 @@ export default function CustomPaginationTable({ query }: Props) {
   if (status === "loading") return <CircularProgress />;
   if (status === "failed") return <p>Failed to load deliveries</p>;
 
-  const handleChangePage = (
-    event: React.MouseEvent<HTMLButtonElement> | null,
-    newPage: number
-  ) => {
+  const handleChangePage = (_: any, newPage: number) => {
     setPage(newPage);
   };
+  
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

@@ -9,7 +9,7 @@ type Delivery = {
   recipient: string;
   address: string;
   status: string;
-  date: string;
+  date: string | Date;
 };
 
 export const fetchDeliveries = createAsyncThunk(
