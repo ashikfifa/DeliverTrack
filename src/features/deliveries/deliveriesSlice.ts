@@ -4,6 +4,14 @@ import axios from "axios";
 const API_URL = "http://localhost:3001/deliveries";
 // const API_URL= process.env.REACT_APP_API_URL
 
+type Delivery = {
+  id?: number;
+  recipient: string;
+  address: string;
+  status: string;
+  date: string;
+};
+
 export const fetchDeliveries = createAsyncThunk(
   "deliveries/fetchAll",
   async () => {
@@ -12,7 +20,7 @@ export const fetchDeliveries = createAsyncThunk(
   }
 );
 
-export const createDelivery = createAsyncThunk(
+export const createDelivery = createAsyncThunk<Delivery, Delivery>(
   "deliveries/create",
   async (newDelivery) => {
     const response = await axios.post(API_URL, newDelivery);
@@ -20,7 +28,7 @@ export const createDelivery = createAsyncThunk(
   }
 );
 
-export const updateDelivery = createAsyncThunk(
+export const updateDelivery = createAsyncThunk<Delivery, Delivery>(
   "deliveries/update",
   async (updatedDelivery) => {
     const response = await axios.put(
