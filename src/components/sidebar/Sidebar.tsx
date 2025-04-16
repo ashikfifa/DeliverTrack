@@ -1,5 +1,17 @@
-import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
-import './sidebar.css'
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  IconButton,
+  ListItemIcon,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import { useState } from "react";
+import "./sidebar.css";
 
 interface SidebarProps {
   selectedView: "dashboard" | "deliveries";
@@ -7,20 +19,41 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const handleToggle = () => {
+    setCollapsed((prev) => !prev);
+  };
+
   return (
     <Box
-      width="100%"
-      maxWidth="300px"
+      width={collapsed ? "80px" : "300px"}
       bgcolor="#2C80FF"
       color="white"
       display="flex"
       flexDirection="column"
+      sx={{ transition: "width 0.3s ease" }}
     >
-      <Typography variant="h4" fontWeight="bold" p={4} pb={2}>
-        Logo
-      </Typography>
+      {/* Header */}
+      <Box
+        display="flex"
+        justifyContent={collapsed ? "center" : "space-between"}
+        alignItems="center"
+        p={4}
+        pb={2}
+      >
+        {!collapsed && (
+          <Typography variant="h5" fontWeight="bold">
+            Logo
+          </Typography>
+        )}
+        <IconButton sx={{ color: "white" }} onClick={handleToggle}>
+          <MenuIcon />
+        </IconButton>
+      </Box>
 
-      <List className="sidebarItem" >
+      {/* Menu Items */}
+      <List className="sidebarItem">
         <ListItem
           component="div"
           onClick={() => onSelect("dashboard")}
@@ -33,15 +66,15 @@ const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
               backgroundColor:
                 selectedView === "dashboard" ? "#1e90ff" : "#1e90ff88",
             },
+            cursor: "pointer",
           }}
         >
-          <ListItemText
-            primary="Dashboard"
-            primaryTypographyProps={{
-              color: "white",
-              fontWeight: "bold",
-            }}
-          />
+          <ListItemIcon
+            sx={{ color: "white", minWidth: "unset", mr: collapsed ? 0 : 2 }}
+          >
+            <DashboardIcon />
+          </ListItemIcon>
+          {!collapsed && <ListItemText primary="Dashboard" />}
         </ListItem>
 
         <ListItem
@@ -51,19 +84,19 @@ const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
             backgroundColor:
               selectedView === "deliveries" ? "#1e90ff" : "transparent",
             borderRadius: 2,
+            cursor: "pointer",
             "&:hover": {
               backgroundColor:
                 selectedView === "deliveries" ? "#1e90ff" : "#1e90ff88",
             },
           }}
         >
-          <ListItemText
-            primary="Deliveries"
-            primaryTypographyProps={{
-              color: "white",
-              fontWeight: selectedView === "deliveries" ? "bold" : "normal",
-            }}
-          />
+          <ListItemIcon
+            sx={{ color: "white", minWidth: "unset", mr: collapsed ? 0 : 2 }}
+          >
+            <LocalShippingIcon />
+          </ListItemIcon>
+          {!collapsed && <ListItemText primary="Deliveries" />}
         </ListItem>
       </List>
     </Box>
