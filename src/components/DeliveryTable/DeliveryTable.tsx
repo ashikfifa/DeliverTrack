@@ -21,10 +21,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../store";
-import {
-  deleteDelivery,
-  fetchDeliveries,
-} from "../../features/deliveries/deliveriesSlice";
+import { fetchDeliveries } from "../../features/deliveries/deliveriesSlice";
 import DeliverModal from "../addEditDeliveryModal/DeliverModal";
 import { useEffect, useState } from "react";
 import { setEditOr } from "../../features/deliveries/deliveryModalSlice";
