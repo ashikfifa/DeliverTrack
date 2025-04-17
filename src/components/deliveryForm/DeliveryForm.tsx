@@ -7,6 +7,7 @@ import {
   Select,
   MenuItem,
   Typography,
+  Alert,
 } from "@mui/material";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
@@ -98,6 +99,9 @@ const DeliveryForm = ({ handleClose, initialData }: DeliveryFormType) => {
 
     if (initialData?.id) {
       dispatch(updateDelivery({ id: initialData.id, ...formattedData }));
+      <Alert variant="filled" severity="success">
+        This is a filled success Alert.
+      </Alert>;
       handleClose();
     } else {
       dispatch(createDelivery(formattedData));

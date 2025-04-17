@@ -27,6 +27,7 @@ import {
 } from "../../features/deliveries/deliveriesSlice";
 import DeliverModal from "../addEditDeliveryModal/DeliverModal";
 import { useEffect, useState } from "react";
+import { setEditOr } from "../../features/deliveries/deliveryModalSlice";
 
 interface TablePaginationActionsProps {
   count: number;
@@ -107,7 +108,6 @@ export default function CustomPaginationTable({ query }: Props) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [openModal, setOpenModal] = useState(false);
   const [selectedDelivery, setSelectedDelivery] = useState<any>(null);
-  const [editOr, setEditor]= useState(false)
 
   const dispatch = useDispatch<AppDispatch>();
   const { rows, status } = useSelector((state: RootState) => state.deliveries);
@@ -115,9 +115,8 @@ export default function CustomPaginationTable({ query }: Props) {
   const handleEditClick = (delivery: any) => {
     setSelectedDelivery(delivery);
     setOpenModal(true);
-    setEditor(true);
+    dispatch(setEditOr(true));
   };
-
   const filteredRows = rows.filter((row: any) => {
     const lowerQuery = query.toLowerCase();
     return (
@@ -127,12 +126,9 @@ export default function CustomPaginationTable({ query }: Props) {
   });
 
   const handleDelete = (delivery: any) => {
-    // if (window.confirm("Are you sure you want to delete this delivery?")) {
-    //   dispatch(deleteDelivery(delivery.id));
-    // }
     setSelectedDelivery(delivery);
     setOpenModal(true);
-    setEditor(false);
+    dispatch(setEditOr(false));
   };
 
   useEffect(() => {
@@ -145,7 +141,6 @@ export default function CustomPaginationTable({ query }: Props) {
   const handleChangePage = (_: any, newPage: number) => {
     setPage(newPage);
   };
-  
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -233,7 +228,6 @@ export default function CustomPaginationTable({ query }: Props) {
           setSelectedDelivery(null);
         }}
         selectedDelivery={selectedDelivery}
-        editOr={editOr}
       />
     </>
   );

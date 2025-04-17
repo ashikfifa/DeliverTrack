@@ -4,12 +4,18 @@ import SearchIcon from "@mui/icons-material/Search";
 import CustomPaginationTable from "../DeliveryTable/DeliveryTable";
 import { useState } from "react";
 import DeliverModal from "../addEditDeliveryModal/DeliverModal";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store";
+import { setEditOr } from "../../features/deliveries/deliveryModalSlice";
 const Deliveries = () => {
   const [openModal, setOpenModal] = useState(false);
   const [query, setQuery] = useState("");
+  const dispatch = useDispatch<AppDispatch>();
+
 
   const handleAddDelivery = () => {
     setOpenModal(true);
+    dispatch(setEditOr(true));
   };
 
   return (

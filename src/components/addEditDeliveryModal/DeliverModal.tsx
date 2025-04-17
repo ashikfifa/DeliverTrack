@@ -1,6 +1,6 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
 import DeliveryForm from "../deliveryForm/DeliveryForm";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteDelivery } from "../../features/deliveries/deliveriesSlice";
 import { AppDispatch } from "../../store";
 
@@ -14,16 +14,17 @@ interface DeliverModalType {
     status: string;
     date: string;
   };
-  editOr: boolean;
 }
 
 const DeliverModal = ({
   openModal,
   selectedDelivery,
   handleClose,
-  editOr,
 }: DeliverModalType) => {
   const dispatch = useDispatch<AppDispatch>();
+
+  const editOr = useSelector((state: any) => state.deliveryModal.editOr);
+
 
   const handleDelete = () => {
     if (selectedDelivery?.id !== undefined) {
