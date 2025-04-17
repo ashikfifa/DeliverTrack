@@ -1,13 +1,6 @@
 {
   "deliveries": [
     {
-      "id": "1",
-      "recipient": "John Doe-updated",
-      "address": "House 12, Road 5, Dhanmondi, Dhaka",
-      "status": "Not Delivered",
-      "date": "2027-10-24"
-    },
-    {
       "id": "2",
       "recipient": "Fatima Akter-updatd",
       "address": "House 22, Block B, Bashundhara R/A, Dhaka",
@@ -20,13 +13,6 @@
       "recipient": "Shakil Rahman",
       "address": "Road 8, Sector 10, Uttara, Dhaka",
       "status": "Pending"
-    },
-    {
-      "id": "4",
-      "date": "2023-10-22",
-      "recipient": "Tahmina Sultana",
-      "address": "Flat 3B, House 7, Banani, Dhaka",
-      "status": "Delivered"
     },
     {
       "id": "5",
@@ -90,13 +76,6 @@
       "address": "House 22, Block B, Bashundhara R/A, Dhaka",
       "status": "Pending",
       "date": "2025-04-15"
-    },
-    {
-      "id": "40dd",
-      "recipient": "Rabbi",
-      "address": "215  Vawalipara,GM Bari,Uttor Badda",
-      "status": "In Transit",
-      "date": "2025-04-17"
     }
   ]
 }

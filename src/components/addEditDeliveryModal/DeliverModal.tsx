@@ -1,5 +1,8 @@
-import { Box, Modal } from "@mui/material";
+import { Box, Button, Modal, Typography } from "@mui/material";
 import DeliveryForm from "../deliveryForm/DeliveryForm";
+import { useDispatch } from "react-redux";
+import { deleteDelivery } from "../../features/deliveries/deliveriesSlice";
+import { AppDispatch } from "../../store";
 
 interface DeliverModalType {
   openModal: boolean;
@@ -11,13 +14,24 @@ interface DeliverModalType {
     status: string;
     date: string;
   };
+  editOr: boolean;
 }
 
 const DeliverModal = ({
   openModal,
   selectedDelivery,
   handleClose,
+  editOr,
 }: DeliverModalType) => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleDelete = () => {
+    if (selectedDelivery?.id !== undefined) {
+      dispatch(deleteDelivery(selectedDelivery.id));
+    }
+    handleClose();
+  };
+
   return (
     <Modal
       open={openModal}
@@ -38,10 +52,29 @@ const DeliverModal = ({
           p: 4,
         }}
       >
-        <DeliveryForm
-          handleClose={handleClose}
-          initialData={selectedDelivery}
-        />
+        {editOr ? (
+          <DeliveryForm
+            handleClose={handleClose}
+            initialData={selectedDelivery}
+          />
+        ) : (
+          <>
+            <Typography variant="h6" mb={1}>
+              Delivery Form
+            </Typography>
+
+            <p> Are you sure you want to delete the delivery? </p>
+
+            <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2 }}>
+              <Button onClick={handleClose} variant="text" type="button">
+                Cancel
+              </Button>
+              <Button variant="contained" type="submit" onClick={handleDelete}>
+                Delete
+              </Button>
+            </Box>
+          </>
+        )}
       </Box>
     </Modal>
   );

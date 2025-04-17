@@ -107,6 +107,7 @@ export default function CustomPaginationTable({ query }: Props) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [openModal, setOpenModal] = useState(false);
   const [selectedDelivery, setSelectedDelivery] = useState<any>(null);
+  const [editOr, setEditor]= useState(false)
 
   const dispatch = useDispatch<AppDispatch>();
   const { rows, status } = useSelector((state: RootState) => state.deliveries);
@@ -114,6 +115,7 @@ export default function CustomPaginationTable({ query }: Props) {
   const handleEditClick = (delivery: any) => {
     setSelectedDelivery(delivery);
     setOpenModal(true);
+    setEditor(true);
   };
 
   const filteredRows = rows.filter((row: any) => {
@@ -125,9 +127,12 @@ export default function CustomPaginationTable({ query }: Props) {
   });
 
   const handleDelete = (delivery: any) => {
-    if (window.confirm("Are you sure you want to delete this delivery?")) {
-      dispatch(deleteDelivery(delivery.id));
-    }
+    // if (window.confirm("Are you sure you want to delete this delivery?")) {
+    //   dispatch(deleteDelivery(delivery.id));
+    // }
+    setSelectedDelivery(delivery);
+    setOpenModal(true);
+    setEditor(false);
   };
 
   useEffect(() => {
@@ -228,6 +233,7 @@ export default function CustomPaginationTable({ query }: Props) {
           setSelectedDelivery(null);
         }}
         selectedDelivery={selectedDelivery}
+        editOr={editOr}
       />
     </>
   );
