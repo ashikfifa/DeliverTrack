@@ -67,6 +67,7 @@ const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
                 selectedView === "dashboard" ? "#1e90ff" : "#1e90ff88",
             },
             cursor: "pointer",
+            paddingLeft:'25px'
           }}
         >
           <ListItemIcon
@@ -89,6 +90,7 @@ const Sidebar = ({ selectedView, onSelect }: SidebarProps) => {
               backgroundColor:
                 selectedView === "deliveries" ? "#1e90ff" : "#1e90ff88",
             },
+            paddingLeft:'25px'
           }}
         >
           <ListItemIcon
