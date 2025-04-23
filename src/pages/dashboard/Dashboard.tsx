@@ -1,9 +1,10 @@
-import StatusCard from "../statusCard/StatusCard";
+
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { useEffect } from "react";
 import { fetchDeliveries } from "../../features/deliveries/deliveriesSlice";
 import { CircularProgress, Grid } from "@mui/material";
+import StatusCard from "../../components/statusCard/StatusCard";
 
 const Dashboard = () => {
   const statusCounts = useSelector(

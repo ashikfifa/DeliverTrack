@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
 import Sidebar from "./components/sidebar/Sidebar";
-import Dashboard from "./components/dashboard/Dashboard";
-import Deliveries from "./components/deliveries/Deliveries";
+
+import Deliveries from "./pages/deliveries/Deliveries";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 const App = () => {
   const [selectedView, setSelectedView] = useState<"dashboard" | "deliveries">(

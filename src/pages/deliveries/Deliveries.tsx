@@ -1,9 +1,9 @@
 import { Button, IconButton, InputBase, Paper } from "@mui/material";
 import "./deliveries.css";
 import SearchIcon from "@mui/icons-material/Search";
-import CustomPaginationTable from "../DeliveryTable/DeliveryTable";
+import CustomPaginationTable from "../../components/DeliveryTable/DeliveryTable";
 import { useState } from "react";
-import DeliverModal from "../addEditDeliveryModal/DeliverModal";
+import DeliverModal from "../../components/addEditDeliveryModal/DeliverModal";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store";
 import { setEditOr } from "../../features/deliveries/deliveryModalSlice";
