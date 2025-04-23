@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// const API_URL = "https://delivertrack.onrender.com/deliveries";
+const API_URL = "https://delivertrack.onrender.com/deliveries";
 // const API_URL= process.env.REACT_APP_API_URL
-const API_URL = "http://localhost:3001/deliveries";
+// const API_URL = "http://localhost:3001/deliveries";
 
 type Delivery = {
   id?: number;
